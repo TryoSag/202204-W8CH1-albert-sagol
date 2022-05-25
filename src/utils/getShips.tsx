@@ -1,17 +1,16 @@
 import axios from "axios";
 
-export const getShips = async () => {
-  let shipsClassList: string[] = [];
+let shipsClassList: string[] = [];
 
+export const getShips = async () => {
   for (let i = 0; i < 4; i++) {
     const {
       data: { results },
     } = await axios.get(`https://swapi.dev/api/starships/?page=${i + 1}`);
 
-    results.map((result: { starship_class: string }) => [
-      ...shipsClassList,
-      result.starship_class,
-    ]);
+    results.forEach((result: { starship_class: string }) =>
+      shipsClassList.push(result.starship_class)
+    );
   }
   console.log(shipsClassList);
 
