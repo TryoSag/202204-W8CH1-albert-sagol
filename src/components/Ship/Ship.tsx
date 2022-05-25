@@ -1,8 +1,8 @@
-export const Ship = ({ class, number }) => {
+export const Ship = ({ ship }: { ship: string }) => {
   return (
     <p>
-      {class}
-      <span>:{number}</span>
+      {ship}
+      <span>: 4</span>
     </p>
   );
 };

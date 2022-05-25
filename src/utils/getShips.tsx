@@ -13,6 +13,7 @@ export const getShips = async () => {
       result.starship_class,
     ]);
   }
+  console.log(shipsClassList);
 
   return shipsClassList;
 };

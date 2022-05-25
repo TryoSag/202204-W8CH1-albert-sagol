@@ -1,7 +1,6 @@
-import { IShipsInformation } from "../../typeSchema/shipsInformation";
 import { Ship } from "../Ship/Ship";
 
-export const ShipsList = ({ shipsInformation }) => {
+export const ShipsList = ({ infoShips }: { infoShips: string[] }) => {
   return (
     <div id={"background-container"}>
       <header id={"header-title"}> Star Wars Test </header>
@@ -10,9 +9,9 @@ export const ShipsList = ({ shipsInformation }) => {
         <p id={"total-ships"}> Total ships: </p>
         <h2>Starships by class:</h2>
         <ul>
-          {shipsInformation.map((ship: IShipsInformation, index: number) => (
+          {infoShips.map((ship: string, index: number) => (
             <li key={index}>
-              <Ship class={ship.class} number={ship.number} />
+              <Ship ship={ship} />
             </li>
           ))}
         </ul>
